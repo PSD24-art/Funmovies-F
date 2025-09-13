@@ -5,7 +5,7 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5400/movies")
+    fetch("https://funmovies-b.onrender.com/movies")
       .then((res) => res.json())
       .then((data) => setMovies(data));
   }, []);

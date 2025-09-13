@@ -9,11 +9,11 @@ export default function Movie() {
   const [rating, setRating] = useState(5);
 
   useEffect(() => {
-    fetch(`http://localhost:5400/movies/${id}`)
+    fetch(`https://funmovies-b.onrender.com/movies/${id}`)
       .then((res) => res.json())
       .then((data) => setMovie(data));
 
-    fetch(`http://localhost:5400/reviews/${id}`)
+    fetch(`https://funmovies-b.onrender.com/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [id]);
@@ -22,7 +22,7 @@ export default function Movie() {
     const token = localStorage.getItem("token");
     if (!token) return alert("Login first");
 
-    await fetch(`http://localhost:5400/reviews/${id}`, {
+    await fetch(`https://funmovies-b.onrender.com/reviews/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default function Movie() {
     setRating(5);
 
     // refresh reviews
-    const res = await fetch(`http://localhost:5400/reviews/${id}`);
+    const res = await fetch(`https://funmovies-b.onrender.com/reviews/${id}`);
     const data = await res.json();
     setReviews(data);
   };
