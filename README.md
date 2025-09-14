@@ -36,7 +36,7 @@ JWT_SECRET=
 Clone the repository
 
 ```bash
-git clone https://github.com/PSD24-art/Funmovies-B
+git clone https://github.com/PSD24-art/Funmovies-F
 cd \Backend
 ```
 
