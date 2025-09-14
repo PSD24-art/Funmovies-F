@@ -1,12 +1,57 @@
-# React + Vite
+# Movie Review Platform – Backend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **Readme** for the Movie Review Platform built using **Node.js, Express, and MongoDB**.  
+It handles authentication, user management.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instructions
 
-## Expanding the ESLint configuration
+- Many more features are in deelopment, loader and other features are yet to be build please wait until data fetches from backend and Database, while login and and other async function rendering executing
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- User registration & login with JWT authentication
+- Passwords hashed with bcrypt
+- MongoDB with Mongoose models
+- REST API endpoints for users (extendable for movies & reviews)
+- `.env` support for environment variables
+
+---
+
+## ⚙️ Setup & Installation
+
+Command Line
+
+```bash
+npm install
+cd /Backend
+```
+
+Create .env root and copy following
+(Since the site is deployed .env is hidden)
+
+```env
+PORT=
+MONGO_URI=
+JWT_SECRET=
+```
+
+Clone the repository
+
+```bash
+git clone https://github.com/PSD24-art/Funmovies-B
+cd \Backend
+```
+
+Run the backend
+
+```bash
+npm run dev
+```
+
+Live Link
+
+```
+https://funmovies-fe.onrender.com/
+```
