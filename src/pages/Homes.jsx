@@ -46,7 +46,7 @@ export default function Home() {
                       {m.title}
                     </h3>
                     <p className="text-xs text-gray-300">
-                      ⭐ {m.avgRating ?? "N/A"}
+                      ⭐ {m.vote_average ?? "N/A"}
                     </p>
                   </div>
 
