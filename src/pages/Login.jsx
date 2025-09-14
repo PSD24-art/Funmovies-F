@@ -10,8 +10,8 @@ export default function Login() {
 
   const handleSubmit = async () => {
     const url = isRegister
-      ? "https://funmovies-b.onrender.com/users/register"
-      : "https://funmovies-b.onrender.com/users/login";
+      ? "https://funmovies-b-1.onrender.com/users/register"
+      : "https://funmovies-b-1.onrender.com/users/login";
 
     const body = isRegister
       ? { email, password, username }

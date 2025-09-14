@@ -5,7 +5,7 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("https://funmovies-b.onrender.com/movies")
+    fetch("https://funmovies-b-1.onrender.com/movies")
       .then((res) => res.json())
       .then((data) => setMovies(data));
   }, []);
@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-900 text-white p-6">
       <h1 className="text-3xl font-extrabold mb-6">Movies</h1>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {movies.map((m) => (
           <Link
             key={m._id}
@@ -23,20 +23,15 @@ export default function Home() {
           >
             <img
               src={
-                m.image ||
                 m.poster_path ||
-                m.posterUrl ||
-                m.backdrop_path ||
                 "https://via.placeholder.com/300x450?text=No+Image"
               }
               alt={m.title}
               className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
             />
 
-            {/* gradient overlay like Netflix */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-75 pointer-events-none" />
 
-            {/* title + rating */}
             <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
               <div className="max-w-[75%]">
                 <h3 className="text-sm font-semibold truncate">{m.title}</h3>

@@ -9,11 +9,11 @@ export default function Movie() {
   const [rating, setRating] = useState(5);
 
   useEffect(() => {
-    fetch(`https://funmovies-b.onrender.com/movies/${id}`)
+    fetch(`https://funmovies-b-1.onrender.com/movies/${id}`)
       .then((res) => res.json())
       .then((data) => setMovie(data));
 
-    fetch(`https://funmovies-b.onrender.com/reviews/${id}`)
+    fetch(`https://funmovies-b-1.onrender.com/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [id]);
@@ -22,7 +22,7 @@ export default function Movie() {
     const token = localStorage.getItem("token");
     if (!token) return alert("Login first");
 
-    await fetch(`https://funmovies-b.onrender.com/reviews/${id}`, {
+    await fetch(`https://funmovies-b-1.onrender.com/reviews/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default function Movie() {
     setRating(5);
 
     // refresh reviews
-    const res = await fetch(`https://funmovies-b.onrender.com/reviews/${id}`);
+    const res = await fetch(`https://funmovies-b-1.onrender.com/reviews/${id}`);
     const data = await res.json();
     setReviews(data);
   };
@@ -53,23 +53,20 @@ export default function Movie() {
           <h1 className="text-3xl font-extrabold text-red-600 mb-2">
             {movie.title}
           </h1>
-          <p className="text-sm text-gray-300 mb-4">{movie.synopsis}</p>
+          <p className="text-sm text-gray-300 mb-4">{movie.overview}</p>
 
           <div className="text-sm text-gray-400 space-y-1 mb-4">
             <p>
               <span className="text-gray-300">Genre:</span>{" "}
-              <span className="text-white">{movie.genre}</span>
+              <span className="text-white">{movie.genre_ids}</span>
             </p>
             <p>
               <span className="text-gray-300">Year:</span>{" "}
-              <span className="text-white">{movie.year}</span>
+              <span className="text-white">{movie.release_date}</span>
             </p>
-            <p>
-              <span className="text-gray-300">Director:</span>{" "}
-              <span className="text-white">{movie.director}</span>
-            </p>
+
             <p className="text-yellow-300 font-semibold">
-              Average Rating: ⭐ {movie.avgRating?.toFixed(1)}
+              Average Rating: ⭐ {movie.vote_average}
             </p>
           </div>
 
